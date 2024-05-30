@@ -20,7 +20,18 @@ The program has been tested on 1 Linux (Fedora) computer, 2 Window machines with
 
 The program is expected to run on Unix/Unix-like OS or Window with WSL. It is assumed that the system has [sysbench](https://github.com/akopytov/sysbench) installed. 
 
-To run the program, execute the provided *threadbenchmark.sh* file. Should this does not work, please install the Python dependencies specified in *requirements.txt* and manually run *python3 threadcount.py* 
+### Manual Setup
+
+1. Create the virtual environment: *python3 -m venv myenv*
+2. Activate the virtual environment: *source myenv/bin/activate*
+3. Install the required dependencies: *pip3 install -r requirements.txt*
+4. Run the script: *python3 threadcount.py*
+
+### Automatic Setup
+
+Run the provided script to automatically set up and activate the Python virtual environment: *./threadbenchmark.sh*
+
+*Note: this is the preferred way of running the script, if not work please follow the manual setup instructions*
 
 ### Options
 
