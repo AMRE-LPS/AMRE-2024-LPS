@@ -2,7 +2,7 @@
 
 
 ## Description
-Simple scripting program utilizing cpu test of sysbench and Piecewise Linear Regression to detect the number of virtual cores on a computer system. Here, we define virtual cores to be *processing units* available to the OS. It is an observed phenomenon that the computer system runs at its full potential on the benchmark when the number of threads equal to the number of virtual cores (the output when running the command *nproc --all*). Utilizing this pattern, we develop a program to estimate the number of virtual cores that includes the following steps:
+This is a simple scripting program utilizing the cpu test of the *sysbench* tool and a piecewise linear regression model to detect the number of virtual cores on a computer system. Here, we define virtual cores to be the *processing units* available to the OS. It is an observed phenomenon that a computer system runs the benchmark at its full potential when the parameter *threads* is set equal to the number of virtual cores (the output when running the command *nproc --all*). Utilizing this pattern, this program determines the number of virtual cores in a system with the following steps:
 
 - Obtaining the output as the number of events from *sysbench cpu --cpu-max-prime={num_prime} run --num-threads={thread_count}* with different cpu-max-prime and num-threads
 - A 2-segment linear regression is applied for each set of data (grouped by cpu-max-prime, each color line on the graph) in order to calculate the *breakpoint* (the x-value of the intersection between 2 linear lines) which happens to be the number of threads.
