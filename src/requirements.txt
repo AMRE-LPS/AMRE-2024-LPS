@@ -1,0 +1,7 @@
+pyArrow==16.1.0
+pandas==2.2.0
+matplotlib==3.8.2
+numpy==1.26.3
+pwlf==2.2.1
+toml==0.10.2
+datetime==5.5
