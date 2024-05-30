@@ -64,7 +64,7 @@ def determine_optimal_threads(data):
     print("\nThe benchmark indicates that number of virtual cores this computer has is likely to be:", max(frequency_dict, key=frequency_dict.get))
  
 def sysbench_cpu(thread_count, prime_num):
-    cmd = f"sysbench cpu --max-time={max_time} run --num-threads={thread_count}"
+    cmd = f"sysbench cpu --max-time={max_time} --num-threads={thread_count} run"
     output = subprocess.check_output(cmd, shell=True).decode()
     for line in output.split('\n'):
         if "total number of events:" in line:
