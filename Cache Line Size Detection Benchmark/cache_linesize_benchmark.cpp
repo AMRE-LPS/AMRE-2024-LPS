@@ -15,12 +15,23 @@ struct alignas(Align) CacheLineShared {
     alignas(Align/2) std::atomic_uint64_t object2{}; 
 };
 
-// Function to measure time
+// Function to get an object that represent current time, help to calculate access time
 inline auto now() noexcept { 
     return std::chrono::high_resolution_clock::now(); 
 }
 
-// Function to induce false sharing
+/**
+ * Inducing false-sharing
+ * 
+ * A template function that works for different alignments of CacheLineShared struct
+ * 
+ * Align: the alignment of the struct
+ * which: a variable to specify which member will be modified each time the function is called, 0 for object1 and 1 for object2
+ * Concurrently modifying two members of the CacheLineShared<Align> data struct to cause
+ * false sharing to happen
+ *
+ * @param data CacheLineShared<Align> struct that stores two members that will be modified
+ */
 template <size_t Align, bool which>
 void false_sharing(CacheLineShared<Align>& data) {
     const auto start_time{now()};
@@ -36,7 +47,7 @@ void false_sharing(CacheLineShared<Align>& data) {
     const auto end_time = now();
     std::chrono::duration<double, std::milli> total_time = end_time - start_time;
 
-    //save time measurement 
+    //Using the members to store the time. Since we need exactly 2 members in CacheLineShared struct, we cannot have a third one to store time
     if constexpr (which)
         data.object1 = total_time.count();
     else
@@ -61,7 +72,7 @@ int main() {
                 t1.join();
                 t2.join();
 
-                //record time taken
+                //record time taken by calculating the total time it takes to modify both of the members, will be divide by 2 later on to get the singular access time
                 time_taken = shared_data.object1 + shared_data.object2;
             };
 
@@ -77,7 +88,7 @@ int main() {
                     case 4096: run_test.operator()<4096>(); break;
                 }
                 
-                //output data in csv format
+                //output data in csv format to stdout
                 cout << align << ", " << time_taken / 2 << "\n";
                 cout.flush();
             }
