@@ -2,9 +2,11 @@
 
 This project is part of the <span style="color:yellow;">[College of Wooster](https://wooster.edu/)</span>'s 2024 <span style="color:black;">[AMRE](https://inside.wooster.edu/amre/)</span> (Applied Method and Research Experience) Program working for the <span style="color:blue;">[Laboratory for Physical Science](https://www.lps.umd.edu/)</span> of the University of Maryland. 
 
-![College of Wooster Logo](README_images/College_of_Wooster.png)
-![AMRE Logo](README_images/Wooster_AMRE.png)
-![Laboratory for Physical Science Logo](README_images/Laboratory_for_Physical_Science.jpg)
+<img src="README_images/College_of_Wooster.png" alt="College of Wooster Logo" width="150"/>
+
+<img src="README_images/Wooster_AMRE.png" alt="AMRE Logo" width="200"/>
+
+<img src="README_images/Laboratory_for_Physical_Science.jpg" alt="Laboratory for Physical Science Logo" width="200"/>
 
 To assist with the process of automated system modeling, this work develops a series of microbenchmark that detects the following hardware parameters:
 
