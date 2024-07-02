@@ -8,8 +8,8 @@ Due to the subtleties associated with false sharing and limited experimentation 
 
 ## Usage
 1. Navigate the **src** directory
-1. Create the virtual environment: `python3 -m venv myenv`
-2. Activate the virtual environment: `source myenv/bin/activate`
+1. Create the virtual environment: `python3 -m venv cachelinesize_venv`
+2. Activate the virtual environment: `source cachelinesize_venv/bin/activate`
 3. Install the required dependencies: `pip3 install -r requirements.txt`
 4. Run the provided *Makefile* to compile the C++ programs: `make all`
 5. Run the python script, this would store the outputs in csv files\, generate the graph and give out predictions: `python3 cache_linesize_benchmark.py`
