@@ -9,7 +9,7 @@ Due to limited experimentation facilities, it has only been tested on a select c
 Also, note that due to the sensitivity of how caches work, it is better to close all other background programs to run the test and run the Python script several times. 
 
 ## Usage
-1. Navigate the **src** directory
+1. Navigate to **src** directory
 2. Create the virtual environment: `python3 -m venv cachesize_venv`
 3. Activate the virtual environment: `source cachesize_venv/bin/activate`
 4. Install the required dependencies: `pip3 install -r requirements.txt`  
