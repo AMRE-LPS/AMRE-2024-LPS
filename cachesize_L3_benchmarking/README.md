@@ -1,8 +1,8 @@
 # L3 Cache Size Detection Tool
 
 ## Description
-This repository contains two benchmarking tools for detecting and a Python script for analyzing cache sizes. The main program performs benchmarks to determine the maximum cache size and estimates the L3 cache size.    
-The main idea of the benchmarking tools is to gradually increase the amount of data loaded into the cache while observing the read access times across four iterations to identify cache misses. Also, the Python program includes various methods for denoising data and visualizing results. Its primary objective is to detect the cache size for each level. Originally, it can detect cache sizes ranging from 64 KB to 1152 MB. However, due to the sensitivity of the cache, it can only estimate the L3 cache size with an error margin of approximately 1 MB, while L1d and L2 are inconsistent, so we removed them and they are not estimated by the Python script. More details about this work can be found in the final paper report.
+This **src** contains two benchmarking tools for detecting and a Python script for analyzing cache sizes. The main program performs benchmarks to determine the maximum cache size and estimates the L3 cache size.    
+The main idea of the benchmarking tools is to gradually increase the amount of data loaded into the cache while observing and recording the read access times across four iterations to identify cache misses. The Python program includes various methods for denoising data, visualizing results, and analyzing the L3 cache size. Its primary objective is to detect the cache size for each level. Originally, it can detect cache sizes ranging from 64 KB to 1152 MB. However, due to the sensitivity of the cache, it can only estimate the L3 cache size with an error margin of approximately 1 MB, while L1d and L2 are inconsistent, so we removed them and the Python script does not estimate them. More details about this work can be found in the final paper report.
 
 ## Limitation 
 Due to limited experimentation facilities, it has only been tested on a select collection of machines. In order to be eligible for actual use, future modifications must be considered.
