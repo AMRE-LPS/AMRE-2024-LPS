@@ -8,9 +8,11 @@ The L3 results should not be used as an accurate predictor of the associativity 
 
 ## Usage
 1. Navigate to the **src** directory
-2. Install the required dependencies: `pip3 install -r requirements.txt`
-3. Run the provided *Makefile* to compile the C programs: `make all`
-4. Run the python script, this will store the outputs in csv files\, generate the graph and print predictions: `python3 cache_associativity_benchmark.py`
+2. Create the virtual environment:  `python3 -m venv cacheassociativity_venv`
+3. Activate the virtual environment: `source cacheassociativity_venv/bin/activate` 
+4. Install the required dependencies: `pip3 install -r requirements.txt`
+5. Run the provided *Makefile* to compile the C programs: `make all`
+6. Run the python script, this will store the outputs in csv files\, generate the graph and print predictions: `python3 cache_associativity_benchmark.py`
 
 ### Note
 Running the executables will create the csv files, and the python script will read and analyze that data to create the prediction. Additionally, the python file defaults to running the L1, L2, and L3 tests sequentially, this can be changed in the main function. Laslty, the test requires user input to run the test accuratly, so for best results use the system's true specifications.
