@@ -4,7 +4,7 @@
 This is a micro-benchmarking tool that detects the associativites of the L1, L2, and L3 caches. 
 
 ## Limitation 
-The L3 results should not be used as an accurate predictor of the associativity of L3. The access times calculated in this implementation do not align with the expected values, which make the prediction not credible. The results of L1 and L2 vary from test to test, and often require a warm up test to produce accurate predictions. 
+The L3 results should not be used as an accurate predictor of the associativity of L3. The access times calculated in this implementation do not align with the expected values, which make the prediction not credible. The results of L1 and L2 vary from test to test, and often require a warm up test to produce accurate predictions. The implemenation limits the testing options to only x86 machines. 
 
 ## Usage
 1. Navigate to the **src** directory
