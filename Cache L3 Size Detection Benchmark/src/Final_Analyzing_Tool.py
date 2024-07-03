@@ -168,9 +168,11 @@ if __name__ == '__main__':
         print("Based on the SG smoothing with Kneedle Algorithm, your biggest Cache Size should not exceed: ", max_cache_size)
 
     else:
-        max_cache_size = input("Please enter the max cache size in MB, please add 4MB to your assumption: ")
+        max_cache_size = input("Please enter the max cache size in MB: ")
         if not max_cache_size:
             max_cache_size = 32
+        else:
+            max_cache_size = float(max_cache_size)*7/6
 
     output = cache_L3size_output_obtain_estimated(int(cache_line_size), float(max_cache_size))
     file_name = f'cache_L3size_benchmark_data_estimated_{timestamp}.csv'
