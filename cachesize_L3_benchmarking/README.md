@@ -25,7 +25,7 @@ The Python program generates CSV files with benchmark data and visualizations of
 ### Note
 To facilitate modularity, the benchmark itself can be run alone using the C++ file or `make run`. It should be noted that it would only print the measurements to the stdout in csv format, the actual calculation and prediction are done with *Final_Analyzing_Tool.py*
 
-## Example
+## Example Input
 1
 Please enter the cache line size (default is 64):   
 Do you know how big your biggest cache size is? (Y/N): n (case not sensitive)  
